@@ -91,3 +91,170 @@ main {
   max-width: 600px;
   margin: 40px auto;
 }
+/* Projecten en blog */
+.pagina-titel {
+  padding: 40px 10%;
+  border-bottom: 3px solid #000000;
+  background-color: #cbd6e0;
+}
+
+.pagina-titel h1 {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 3rem;
+}
+
+.projecten,
+.blog-overzicht {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.project {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 45px;
+  padding: 25px;
+  border: 2px solid #000000;
+  background-color: #f4f6f7;
+}
+
+.project img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.project h2,
+.blog-bericht h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.project li {
+  margin-bottom: 5px;
+}
+
+.blog-bericht {
+  margin-bottom: 30px;
+  padding: 25px;
+  border-left: 6px solid #000000;
+  background-color: #f4f6f7;
+}
+
+.blog-bericht a {
+  color: #003c73;
+  font-weight: bold;
+}
+
+.datum {
+  color: #444444;
+  font-style: italic;
+}
+
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #cbd6e0;
+  border-top: 2px solid #000000;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #000000;
+}
+
+/* Resize voor tablet */
+@media (max-width: 768px) {
+  .wie-ben-ik img {
+    width: 40%;
+  }
+
+  .intro-tekst {
+    width: 60%;
+    padding: 50px 30px;
+  }
+
+  .project img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* Resize voor Mobiel */
+@media (max-width: 480px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav a,
+  .knop {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .wie-ben-ik {
+    display: block;
+  }
+
+  .wie-ben-ik img,
+  .intro-tekst {
+    width: 100%;
+  }
+
+  .wie-ben-ik img {
+    height: 350px;
+  }
+
+  .intro-tekst {
+    padding: 35px 20px;
+  }
+
+  .intro-tekst h3 {
+    margin-top: 30px;
+    font-size: 2.2rem;
+  }
+
+  .pagina-titel {
+    padding: 30px 20px;
+  }
+
+  .pagina-titel h1 {
+    font-size: 2.2rem;
+  }
+
+  .project {
+    display: block;
+  }
+
+  .project img {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+  }
+
+  footer p {
+    margin: 5px;
+  }
+}
