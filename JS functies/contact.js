@@ -1,9 +1,12 @@
+/* textvelden response*/
 const form = document.querySelector("#contact-form");
 const velden = [
 { id: "naam", boodschap: "Vul minimaal 2 tekens in." },
 { id: "email", boodschap: "Vul een geldig e-mailadres in." },
 { id: "bericht", boodschap: "Schrijf minimaal 10 tekens." },
 ];
+
+/* validatie*/
 function valideerVeld(veld) {
 const input = document.querySelector(`#${veld.id}`);
 const foutmelding = document.querySelector(`#${veld.id}-error`);

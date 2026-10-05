@@ -47,7 +47,7 @@ const projecten = [
     technieken: ["TypeScript", "CSS"],
   },
 ];
-/* dom1*/
+/* project laten zien*/
 const projectloader = document.querySelector("#projectloader");
 
 for (const project of projecten) {
