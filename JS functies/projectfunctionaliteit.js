@@ -47,6 +47,7 @@ const projecten = [
     technieken: ["TypeScript", "CSS"],
   },
 ];
+/* dom1*/
 const projectloader = document.querySelector("#projectloader");
 
 for (const project of projecten) {
@@ -79,7 +80,7 @@ for (const project of projecten) {
     </article>
   `;
 }
-/* sorteren */
+/* sorteren dom 2 en 3 */
 const sorteerKeuze = document.querySelector("#sorteer-keuze");
 const sorteerRichting = document.querySelector("#sorteer-richting");
 
