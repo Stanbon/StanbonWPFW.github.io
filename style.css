@@ -9,6 +9,9 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
+main {
+	min-height: 782px;
+}
 
 header {
   min-height: 100px;
@@ -48,9 +51,6 @@ nav .active,
   outline: 2px solid #000000;
 }
 
-main {
-  min-height: 600px;
-}
 
 
 .wie-ben-ik {
@@ -168,6 +168,40 @@ footer p {
 footer a {
   color: #000000;
 }
+span[role="alert"] {
+  display: block;
+  min-height: 24px;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  color: #b00020;
+  font-weight: bold;
+}
+ 
+input[aria-invalid="true"] {
+  border: 2px solid #b00020;
+}
+
+ form {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
+  border: 2px solid #000000;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+}
+
+.contact footer {
+	margin-bottom: 0;
+} 
 
 /* Resize voor tablet */
 @media (max-width: 768px) {

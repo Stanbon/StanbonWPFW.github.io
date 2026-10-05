@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Persoonlijke portfolio van Stan Bongaerts.">
+  <title>Stan Bongaerts - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<p class="logo">Contact</p>
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="projecten.html">Portfolio</a>
+			<a href="blog.html">Blog</a>
+			<a class="active" href="contact.html">Contact</a>
+		</nav>
+	</header>
+
+ <main>
+  <form id="contact-form" novalidate>
+    <label for="naam">Naam</label>
+    <input id="naam" required minlength="2" aria-describedby="naam-error" aria-invalid="false">
+    <span id="naam-error" role="alert"></span>
+
+    <label for="email">E-mail</label>
+    <input id="email" type="email" required aria-describedby="email-error" aria-invalid="false">
+    <span id="email-error" role="alert"></span>
+
+    <label for="bericht">Bericht</label>
+    <input id="bericht" required minlength="10" aria-describedby="bericht-error" aria-invalid="false"></input>
+    <span id="bericht-error" role="alert"></span>
+    <button type="submit">Versturen</button>
+    <div id="form-status" aria-live="polite"></div>
+  </form>
+  <script src="JS functies/contact.js"></script>
+ </main>
+
+
+    <footer>
+    <p>© 2026 Stan Bongaerts</p>
+    <p>24104256@student.hhs.nl</p>
+	</footer>
+</body>
