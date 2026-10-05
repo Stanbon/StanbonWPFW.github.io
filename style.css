@@ -168,6 +168,21 @@ footer p {
 footer a {
   color: #000000;
 }
+
+.contact footer {
+	margin-bottom: 0;
+} 
+label{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+select {
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+}
 span[role="alert"] {
   display: block;
   min-height: 24px;
@@ -199,9 +214,6 @@ input {
   border: 1px solid #000000;
 }
 
-.contact footer {
-	margin-bottom: 0;
-} 
 
 /* Resize voor tablet */
 @media (max-width: 768px) {

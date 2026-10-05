@@ -14,7 +14,7 @@
       <a href="index.html">Home</a>
       <a class="active" href="projecten.html">Portfolio</a>
       <a href="blog.html">Blog</a>
-	  <a href="contact.html">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -24,49 +24,21 @@
       <p>Hier staan projecten die ik tijdens mijn opleiding heb gemaakt.</p>
     </section>
 
-    <section class="projecten">
-      <article class="project">
-        <img src="images/autohome.jpg" alt="Logo van AutoHome met een Raspberry Pi en een temperatuursensor.">
-        <div>
-          <h2>Autohome</h2>
-          <p>
-            Autohome was mijn eerste project tijdens Software Engineering. Met
-            mijn projectgroep heb ik een simpele home-assistant-fork gemaakt op
-            een Raspberry Pi.
-          </p>
-          <p>
-            Een lichtsensor leest de lichtniveaus. Daarna kunnen de lichten
-            automatisch aan of uit gaan.
-          </p>
-          <h3>Gebruikte technieken</h3>
-          <ul>
-            <li>Python</li>
-            <li>Raspberry Pi</li>
-            <li>Lichtsensor</li>
-          </ul>
-        </div>
-      </article>
+    <section class="sorteer-opties" aria-label="Projecten sorteren">
+      <label for="sorteer-keuze">Sorteer op</label>
+      <select id="sorteer-keuze">
+        <option value="datum">Datum</option>
+        <option value="zelfvoldoening">Zelfvoldoening</option>
+      </select>
 
-      <article class="project">
-        <img src="images/petalbid.jpg" alt="Voorbeeld van het logo van de digitale veilingsklok site.">
-        <div>
-          <h2>Digitale veilingsklok</h2>
-          <p>
-            De digitale veilingsklok is een project dat ik heb gemaakt tijdens
-			dezelfde module als nu, multilayer webdevelopment. 
-			Het is een webapplicatie die een veilingsklok simuleert. De klok
-			telt af en toont de resterende tijd. Als de tijd op is, wordt de veiling gesloten en kan er niet meer geboden worden.
-          </p>
-          <h3>Gebruikte technieken</h3>
-          <ul>
-            <li>Heel klein beetje docker</li>
-            <li>C#</li>
-            <li>React</li>
-          </ul>
-        </div>
-      </article>
+      <label for="sorteer-richting">Volgorde</label>
+      <select id="sorteer-richting">
+        <option value="oplopend">Oplopend</option>
+        <option value="aflopend">Aflopend</option>
+      </select>
     </section>
-  </main>
+
+      <section id="projectloader"></section>
 
   <footer>
     <p>© 2026 Stan Bongaerts</p>
