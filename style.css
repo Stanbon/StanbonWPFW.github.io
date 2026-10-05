@@ -267,9 +267,9 @@ input {
 .wie-ben-ik img {
     width: 100%;
     height: 220px;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+    justify-content: center;
+	allign-items: center;
+  }
 
   .intro-tekst {
     padding: 35px 20px;
