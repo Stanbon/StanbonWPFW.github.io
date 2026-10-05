@@ -257,4 +257,10 @@ footer a {
   footer p {
     margin: 5px;
   }
+
+  .wie-ben-ik img, .project img {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
