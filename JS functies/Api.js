@@ -1,16 +1,22 @@
-  const weerTekst = document.querySelector("#weer-tekst");
+const weerTekst = document.querySelector("#weer-tekst");
 
-  async function laadWeer() {
-    try {
-      const response = await fetch("/api/weather?city=Den%20Haag");
-      const resultaat = await response.json();
-      const weer = resultaat.data;
+async function laadWeer() {
+  try {
+    const response = await fetch("/JS functies/weather.js");
 
-      weerTekst.textContent =
-        `Temperatuur: ${weer.tempC} °C | Wind: ${weer.windKph} km/u uit het ${weer.windDir}`;
-    } catch (error) {
-      weerTekst.textContent = "Het weer kon niet geladen worden.";
+    if (!response.ok) {
+      throw new Error(`Serverfout: ${response.status}`);
     }
-  }
 
-  laadWeer();
+    const resultaat = await response.json();
+    const weer = resultaat.data;
+
+    weerTekst.textContent =
+      `Temperatuur: ${weer.tempC} °C | Wind: ${weer.windKph} km/u uit het ${weer.windDir}`;
+  } catch (error) {
+    console.error(error);
+    weerTekst.textContent = "Het weer kon niet geladen worden.";
+  }
+}
+
+laadWeer();
