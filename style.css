@@ -213,13 +213,14 @@ footer a {
     display: block;
   }
 
-  .wie-ben-ik img,
   .intro-tekst {
     width: 100%;
   }
 
   .wie-ben-ik img {
-    height: 350px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .intro-tekst {
@@ -244,9 +245,9 @@ footer a {
   }
 
   .project img {
-    width: 100%;
-    height: 220px;
-    margin-bottom: 20px;
+   height: auto;
+   max-width: 100%;
+   object-fit: contain;
   }
 
   footer {
@@ -256,11 +257,5 @@ footer a {
 
   footer p {
     margin: 5px;
-  }
-
-  .wie-ben-ik img, .project img {
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
   }
 }
