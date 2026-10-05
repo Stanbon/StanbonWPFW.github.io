@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #e9eef2;
+  color: #111111;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  min-height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f6f7;
+}
+
+.logo {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a,
+.knop {
+  padding: 12px 25px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* op hover verander*/
+nav a:hover,
+nav .active,
+.knop:hover {
+  background-color: #ffffff;
+  color: #000000;
+  outline: 2px solid #000000;
+}
+
+main {
+  min-height: 600px;
+}
+
+
+.wie-ben-ik {
+  display: flex;
+  min-height: 650px;
+}
+
+.wie-ben-ik img {
+  width: 32%;
+  object-fit: cover;
+}
+
+.intro-tekst {
+  width: 68%;
+  padding: 80px 12%;
+  text-align: center;
+}
+
+.intro-tekst h1 {
+  margin-bottom: 0;
+  font-family: "Courier New", monospace;
+  font-size: 2.2rem;
+}
+
+.intro-tekst h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.intro-tekst h3 {
+  margin-top: 45px;
+  font-family: "Courier New", monospace;
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.intro-tekst p {
+  max-width: 600px;
+  margin: 40px auto;
+}
