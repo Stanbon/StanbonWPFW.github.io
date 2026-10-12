@@ -269,7 +269,8 @@ input {
     height: 220px;
     justify-content: center;
 	allign-items: center;
-	object-fit: top;
+	object-fit: cover;
+	object-position: top;
   }
 
   .intro-tekst {
