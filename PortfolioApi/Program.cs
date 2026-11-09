@@ -9,8 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("PortfolioDatabase")));
+ options.UseNpgsql(builder.Configuration.GetConnectionString("PortfolioDatabase")));
 
 builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IBlogpostService, BlogpostService>();

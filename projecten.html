@@ -28,7 +28,8 @@
       <label for="sorteer-keuze">Sorteer op</label>
       <select id="sorteer-keuze">
         <option value="datum">Datum</option>
-        <option value="zelfvoldoening">Zelfvoldoening</option>
+        <option value="titel">Titel</option>
+        <option value="categorie">Categorie</option>
       </select>
 
       <label for="sorteer-richting">Volgorde</label>
@@ -37,13 +38,16 @@
         <option value="aflopend">Aflopend</option>
       </select>
     </section>
-      <!-- project owrd hier geladen vanaf de projectfunctionaliteit.js -->
-      <section id="projectloader"></section>
+
+    <p id="project-status" role="status">Projecten worden geladen...</p>
+    <section id="projectloader"></section>
   </main>
+
   <footer>
     <p>© 2026 Stan Bongaerts</p>
     <p>24104256@student.hhs.nl</p>
   </footer>
+
   <script src="JS functies/projectfunctionaliteit.js"></script>
 </body>
 </html>
