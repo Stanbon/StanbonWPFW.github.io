@@ -1,4 +1,5 @@
-const API_BASE_URL = "https://localhost:5000";
+const API_BASE_URL = "http://localhost:5000";
+
 const blogloader = document.querySelector("#blogloader");
 const blogStatus = document.querySelector("#blog-status");
 
@@ -21,6 +22,11 @@ async function laadBlogposts() {
     const blogposts = await response.json();
     blogloader.replaceChildren();
 
+    if (blogposts.length === 0) {
+      blogStatus.textContent = "Er zijn nog geen blogposts geplaatst.";
+      return;
+    }
+
     for (const blogpost of blogposts) {
       const artikel = document.createElement("article");
       artikel.className = "blog-bericht";
@@ -41,7 +47,7 @@ async function laadBlogposts() {
 
     blogStatus.hidden = true;
   } catch (error) {
-    console.error(error);
+    console.error("Blogposts laden mislukt:", error);
     blogStatus.textContent =
       "Blogposts kunnen niet worden geladen. Controleer of de API online is.";
   }

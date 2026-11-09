@@ -1,6 +1,7 @@
-const API_BASE_URL = "https://localhost:5000";
+const API_BASE_URL = "http://localhost:5000";
 
 const projectloader = document.querySelector("#projectloader");
+const projectStatus = document.querySelector("#project-status");
 const sorteerKeuze = document.querySelector("#sorteer-keuze");
 const sorteerRichting = document.querySelector("#sorteer-richting");
 let projecten = [];
@@ -22,15 +23,27 @@ function formatteerDatum(datum) {
 function toonProjecten() {
   const eigenschap = sorteerKeuze.value;
   const richting = sorteerRichting.value === "oplopend" ? 1 : -1;
+
   const gesorteerd = [...projecten].sort((a, b) => {
-    const waardeA = eigenschap === "datum" ? a.datum : a.zelfvoldoening;
-    const waardeB = eigenschap === "datum" ? b.datum : b.zelfvoldoening;
-    return waardeA < waardeB ? -richting : waardeA > waardeB ? richting : 0;
+    const waardeA = eigenschap === "datum"
+      ? new Date(a.datum)
+      : a.zelfvoldoening;
+    const waardeB = eigenschap === "datum"
+      ? new Date(b.datum)
+      : b.zelfvoldoening;
+
+    return (waardeA - waardeB) * richting;
   });
 
+  if (gesorteerd.length === 0) {
+    projectloader.innerHTML = "<p>Er zijn nog geen projecten toegevoegd.</p>";
+    return;
+  }
+
   projectloader.innerHTML = gesorteerd.map(project => {
-    const technieken = project.categorie
+    const technieken = (project.categorie ?? "")
       .split(",")
+      .filter(Boolean)
       .map(techniek => `<li>${escapeHtml(techniek.trim())}</li>`)
       .join("");
 
@@ -40,10 +53,7 @@ function toonProjecten() {
         <div>
           <h2>${escapeHtml(project.titel)}</h2>
           <p>${escapeHtml(project.beschrijving)}</p>
-          <p>
-            <strong>Datum:</strong> ${formatteerDatum(project.datum)}
-            · <strong>Zelfvoldoening:</strong> ${project.zelfvoldoening}/5
-          </p>
+          <p><strong>Datum:</strong> ${formatteerDatum(project.datum)} · <strong>Zelfvoldoening:</strong> ${project.zelfvoldoening}/5</p>
           <h3>Gebruikte technieken</h3>
           <ul>${technieken}</ul>
         </div>
@@ -57,10 +67,12 @@ async function laadProjecten() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     projecten = await response.json();
+    projectStatus.textContent = "";
     toonProjecten();
   } catch (error) {
     console.error("Projecten laden mislukt:", error);
-    projectloader.innerHTML = "<p>Projecten kunnen niet worden geladen. Controleer of de API online is.</p>";
+    projectStatus.textContent = "Projecten kunnen niet worden geladen.";
+    projectloader.innerHTML = `<p>Controleer of ${API_BASE_URL}/api/projects bereikbaar is.</p>`;
   }
 }
 
