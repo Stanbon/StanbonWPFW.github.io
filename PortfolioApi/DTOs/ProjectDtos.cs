@@ -7,7 +7,10 @@ public record ProjectResponseDto(
     string Titel,
     string Beschrijving,
     string Categorie,
-    DateOnly Datum);
+    DateOnly Datum,
+    string AfbeeldingUrl,
+    string AfbeeldingAlt,
+    int Zelfvoldoening);
 
 public class CreateProjectDto
 {
@@ -21,6 +24,16 @@ public class CreateProjectDto
     public string Categorie { get; init; } = string.Empty;
 
     public DateOnly Datum { get; init; }
+
+    // Accepteert relatieve paden zoals "images/wavelength.jpg" én volledige https-URL's.
+    [Required, StringLength(500)]
+    public string AfbeeldingUrl { get; init; } = string.Empty;
+
+    [Required, StringLength(250)]
+    public string AfbeeldingAlt { get; init; } = string.Empty;
+
+    [Range(1, 5)]
+    public int Zelfvoldoening { get; init; }
 }
 
 public class UpdateProjectDto : CreateProjectDto

@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://YOUR-API-URL.azurewebsites.net";
+const API_BASE_URL = "https://localhost:5000";
 const blogloader = document.querySelector("#blogloader");
 const blogStatus = document.querySelector("#blog-status");
 

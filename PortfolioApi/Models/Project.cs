@@ -7,4 +7,7 @@ public class Project
     public string Beschrijving { get; set; } = string.Empty;
     public string Categorie { get; set; } = string.Empty;
     public DateOnly Datum { get; set; }
+    public string AfbeeldingUrl { get; set; } = string.Empty;
+    public string AfbeeldingAlt { get; set; } = string.Empty;
+    public int Zelfvoldoening { get; set; }
 }
